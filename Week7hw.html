@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Maps Application!</title>
+  <style type="text/css">
+    #map
+    {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<h1>Naples's Map!</h1>
+<p>The places that I am going to be doing is<p>
+  <ul>
+    <li>Bounce: Trampoline Park</li>
+    <li>Chipotle: Place to eat</li>
+    <li>Walmart: Place to shop</li>
+    <li>Pine Ridge Middle School: Place to go to school</li>
+  </ul>
+<div id = "map"></div>
+<script type="text/javascript">
+
+
+  function initMap()
+  {
+    var naples = {lat:26.1420 , lng: -81.7948};
+
+    var bounce = {lat: 26.247379 , lng: -81.774541};
+
+    var chipotle = {lat:26.256016 , lng:  -81.800207};
+
+    var walmart = {lat:26.274777 , lng:  -81.746046}
+
+    var pine = {lat:26.214735 , lng:  -81.787484}
+
+    var map = new google.maps.Map(document.getElementById('map'), {zoom: 11 , center: naples, maptypeId: 'satellite'}) ; 
+ 
+    var marker = new google.maps.Marker({position: bounce , map: map}) ; 
+    var marker1 = new google.maps.Marker({position: chipotle , map: map}) ; 
+    var marker2 = new google.maps.Marker({position: walmart , map: map}) ; 
+    var marker3 = new google.maps.Marker({position: pine , map: map}) ; 
+  }
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRRHQard8PSlH3Cql108co5UpJm4vI4m8&callback=initMap"> </script>
+</body>
+</html>

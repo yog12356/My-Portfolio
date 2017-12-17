@@ -1,0 +1,35 @@
+img
+{
+	width: 600px;
+	height: 500px;
+    	border: 20px solid #cc4242;
+	border-image-source: url('svg_border.svg');
+	border-image-slice: 33.3333%;
+}
+
+body
+{
+    background-color: #63f4ff;
+    text-align: center;
+}
+
+#first-paragraph
+{
+    font-family: 'Saira Semi Condensed', sans-serif;
+    text-align: center;
+    color: #ff00ff
+}
+
+#second-paragraph
+{
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    color: #ff0000
+}
+
+#title
+{
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    color: #33cc33
+}
