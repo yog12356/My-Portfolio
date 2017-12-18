@@ -8,6 +8,55 @@
 <p id="Mean"></p>
 <p id="Median"></p>
 
-<script type="text/javascript" src="Week6.JS"></script>
+<script>
+	function mean(array) {
+  var total = 0
+  for (var i = 0; i < array.length; i++) {
+    total = total + array[i]
+  }
+
+  var mea = total / array.length;
+
+  return mea
+}
+
+document.getElementById("Mean").innerHTML = "Mean:" + mean([3, 7, 8, 21, 40, 82, 60, 3, 64, 5, 2, 90, 42, 48, 64, 72, 50, 60, 89, 99])
+
+function median(values) {
+  values.sort(function(a, b) {
+    return a - b;
+  });
+  var half = Math.floor(values.length / 2);
+
+  if (values.length % 2)
+    return values[half];
+  else
+    return (values[half - 1] + values[half]) / 2.0;
+}
+
+document.getElementById("Median").innerHTML = "Median:" + median([3, 7, 8, 21, 40, 82, 60, 3, 64, 5, 2, 90, 42, 48, 64, 72, 50, 60, 89, 99])
+
+function mode(ary) {
+  var counter = {};
+  var mode = [];
+  var max = 0;
+  for (var i in ary) {
+    if (!(ary[i] in counter))
+      counter[ary[i]] = 0;
+    counter[ary[i]]++;
+
+    if (counter[ary[i]] == max)
+      mode.push(ary[i]);
+    else if (counter[ary[i]] > max) {
+      max = counter[ary[i]];
+      mode = [ary[i]];
+    }
+  }
+  return mode;
+}
+
+document.getElementById("Mode").innerHTML = "Mode:" + mode([3, 7, 8, 21, 40, 82, 60, 3, 64, 5, 2, 90, 42, 48, 64, 72, 50, 60, 89, 99])
+
+</script>
 </body>
 </html>
